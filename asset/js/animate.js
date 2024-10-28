@@ -1,14 +1,19 @@
-function toggleAnswer(element) {
-    const parent = element.parentElement;
-    const answer = parent.querySelector('.faq-answer');
-    const icon = element.querySelector('.icon');
+document.addEventListener('DOMContentLoaded', function () {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2 
+            };
 
-    // Toggle kelas untuk mengontrol animasi
-    if (parent.classList.contains('open')) {
-        parent.classList.remove('open');
-        icon.textContent = "▼";
-    } else {
-        parent.classList.add('open');
-        icon.textContent = "▲";
-    }
-}
+            const callback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+            const observer = new IntersectionObserver(callback, options);
+            const elements = document.querySelectorAll('.animate');
+            elements.forEach(element => observer.observe(element));
+        });

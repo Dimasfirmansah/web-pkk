@@ -1,6 +1,8 @@
 body {
     font-family: "Inter";
     overflow-x: hidden;
+    padding: 0;
+    margin: 0;
 }
 nav a {
     position: relative;
@@ -10,8 +12,11 @@ nav a {
     padding-bottom: 3px;
     padding-top: 20px;
 }
-header h3{
+header h3 a{
     font-weight: bold;
+    text-decoration: none;
+    font-size: 28px;
+    color: #fff;
 }
 
 nav a::after {
@@ -50,11 +55,11 @@ nav a:hover {
 }
 
 .hero-section h1 {
-    color: #ffc107; /* Warna kuning */
+    color: #ffc107;
 }
 
 .hero-section h2 {
-    color: #ffcc00; /* Warna kuning untuk subjudul */
+    color: #ffcc00;
     font-weight: bold;
 }
 
@@ -106,27 +111,42 @@ nav a:hover {
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* When the element is in view, animate it */
 .in-view {
     opacity: 1;
     transform: translateY(0);
 }
 /* fasilitas */
 
-.image-fasilitas{
+#fasilitas .container{
+    text-align: end;
+}
+#fasilitas .container a{
+    font-weight: 800;
+    font-size: 32px;
+    text-decoration: none;
+}
+.image-fasilitas {
     display: flex;
     justify-content: space-around;
     padding-top: 30px;
 }
-.image-fasilitas img{
+
+.image-fasilitas img {
     width: 350px;
     border-radius: 40px;
     box-shadow: 0px 0px 40px grey;
+    transition: transform 0.3s ease;
 }
-#fasilitas h1{
+
+.image-fasilitas img:hover {
+    transform: scale(1.1);
+}
+
+#fasilitas h1 {
     font-size: 48px;
 }
-#fasilitas p{
+
+#fasilitas p {
     font-size: 18px;
 }
 
@@ -172,7 +192,7 @@ nav a:hover {
 }
 
 .faq-item.open .faq-answer {
-    max-height: 200px; /* Maksimal tinggi jawaban ketika terbuka */
+    max-height: 200px;
     padding-top: 10px;
 }
 
@@ -180,11 +200,13 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .icon {
     font-size: 20px;
     color: #1310ad;
+    margin-left: 10px;
 }
 
 .faq-image {
@@ -214,4 +236,255 @@ nav a:hover {
 }
 #footer .container, .col p{
     font-weight: 600;
+}
+.container-visi{
+    background-color: #1400A7;
+}
+#container-text p{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+/* halaman fasilitas */
+
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* halaman fasilitas bagian fasilitas info */
+.container-wrap{
+    padding: 30px;
+}
+.container-wrap h1{
+    font-weight: 800;
+    font-size: 36px;
+    color: #316189;
+    padding-bottom: 20px;
+}
+.container-wrap p{
+    font-weight: 600;
+    color: #000;
+    font-size: 18px;
+}
+.container-img-fasilitas{
+    box-shadow: grey 0px 0px 40px;
+    border-radius: 40px;
+    position: relative;
+    left: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+.container-img-fasilitas:hover{
+    transform: scale(1.05);
+}
+
+.container-text-guru p{
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    width: 450px;
+    padding-top: 20px;
+    align-items: center;
+}
+.container-text-guru h1{
+    color: #FFCD06;
+    font-weight: 800;
+    font-size: 36px;
+}
+.container-img-guru{
+    box-shadow: #0008FF 0px 0px 40px;
+    border-radius: 40px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    right: 50px;
+}
+.container-img-guru:hover{
+    transform: scale(1.05);
+}
+
+
+/* halaman hasil-karya */
+
+.section-5 {
+    padding: 50px 0px 50px 0px;
+}
+
+.section-5-text {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #000000;
+    width: 50%;
+}
+
+@keyframes changing-colors {
+    0% {
+        color: #FED85F;
+    }
+
+    100% {
+        color: #000000;
+    }
+}
+
+.section-5-icon {
+    margin-top: 30px;
+}
+
+.sec5-icon {
+    font-size: 100px;
+    animation: changing-colors 2s infinite;
+}
+
+.sec5-portfolio-head {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.work-gallery-row {
+    padding: 0px 20px 0px 20px;
+}
+
+.masonry {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 30px;
+    row-gap: 10px;
+}
+.masonry .grid {
+    display: inline-block;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.masonry .grid:before {
+    border-radius: 5px;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+}
+
+.masonry .grid:hover::before {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.masonry .grid:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.04);
+    transition: all 0.1s ease-in-out;
+}
+
+.masonry .grid img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.masonry .grid__title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+}
+
+.masonry .grid__author {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.masonry .grid__link {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.masonry .grid__body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 30px 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.masonry .grid__tag {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border-radius: 5px;
+    padding: 4px 10px;
+    margin-bottom: 5px;
+}
+
+#nav-hero {
+    background: url(asset/img/IMG_1004\ \(1\).jpg) no-repeat;
+    background-size: cover;
+    padding-bottom: -500px;
+}
+
+#nav-hero .container a {
+    align-items: center;
+    align-content: center;
+}
+#nav-hero .container p,a {
+    color: #000;
+    font-weight: 600;
+    padding-top: 10px;
+    font-size: 20px;
+}
+#nav-hero .container a button:hover{
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur;
+}
+#nav-hero .container a button{
+    background: transparent;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 1px solid #000;
 }
