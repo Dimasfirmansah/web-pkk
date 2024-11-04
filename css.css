@@ -231,6 +231,9 @@ nav a:hover {
 .container-icon ul li{
     padding-left: 40px;
 }
+.container-icon ul li a img{
+    width: 50px;
+}
 #footer .container, .col{
     color: #fff;
 }
